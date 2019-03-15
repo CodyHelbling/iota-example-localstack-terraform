@@ -28,8 +28,7 @@ provider "aws" {
 ## Getting Started
 
 In one console: `localstack start`
-- This is nice to keep open because it can catch output from localstack services.
-- If you don't want to spin up all AWS services `export SERVICES=dynamodb,iam,lambda` before running `localstack 
+- Optional: Only spin up necessary services with `export SERVICES=dynamodb,iam,lambda` before running `localstack 
     start`
     
 In another: `cd terraform; make all` (from project root)
