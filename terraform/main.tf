@@ -2,7 +2,7 @@ provider "aws" {
   //  When alias is set, it creates an additional provider configuration.
   //  For providers that have no required configuration arguments, the implied empty configuration is considered to be
   //  the default provider configuration.
-//  alias = "localstack"
+  //  alias = "localstack"
 
   s3_force_path_style         = true
   skip_credentials_validation = true
