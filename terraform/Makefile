@@ -5,6 +5,9 @@ zip:
 init:
 	terraform init
 
+plan:
+	terraform plan
+
 apply:
 	terraform apply -lock=false -auto-approve
 
@@ -16,5 +19,6 @@ clean:
 
 all: zip init apply
 
+export SERVICES=dynamodb,iam,lambda
 localstack:
 	localstack start

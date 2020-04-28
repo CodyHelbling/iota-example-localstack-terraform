@@ -1,4 +1,4 @@
 variable "dynamo_table" {
-  type = "string"
+  type = string
   description = "TBD"
 }

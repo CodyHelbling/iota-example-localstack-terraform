@@ -7,7 +7,7 @@ provider "aws" {
 
   region = "us-west-2"
 
-  endpoints = {
+  endpoints {
     dynamodb = "http://localhost:4569"
     iam = "http://localhost:4593"
     lambda = "http://localhost:4574"

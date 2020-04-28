@@ -7,7 +7,7 @@ TODO:
 - Improve documentation.
 
 
-[This](./terraform/main.tf) is how I pointed to Localstack instead of AWS.
+[This](terraform/main.hcl) is how I pointed to Localstack instead of AWS.
 ```hcl-terraform
 provider "aws" {
   s3_force_path_style         = true
