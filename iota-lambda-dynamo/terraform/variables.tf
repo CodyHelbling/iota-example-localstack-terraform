@@ -1,4 +1,4 @@
-variable "dynamo_table" {
+variable "dynamo_table_arn" {
   type = string
   description = "TBD"
 }

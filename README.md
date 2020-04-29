@@ -7,7 +7,7 @@ TODO:
 - Improve documentation.
 
 
-[This](terraform/main.hcl) is how I pointed to Localstack instead of AWS.
+[This](terraform/provider.tf) is how I pointed to Localstack instead of AWS.
 ```hcl-terraform
 provider "aws" {
   s3_force_path_style         = true
@@ -27,11 +27,9 @@ provider "aws" {
 ```
 ## Getting Started
 
-In one console: `localstack start`
-- Optional: Only spin up necessary services with `export SERVICES=dynamodb,iam,lambda` before running `localstack 
-    start`
+`cd terraform; make localstack`
     
-In another: `cd terraform; make all` (from project root)
+`make (init|plan|apply)`
 
 Optional: `localstack web` to spin up Localstack's web dashboard ( http://0.0.0.0:8080/ )
 

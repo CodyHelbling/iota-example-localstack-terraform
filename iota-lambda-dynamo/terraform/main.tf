@@ -1,5 +1,5 @@
-resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
+resource "aws_iam_role" "iam_for_dynamo_lambda" {
+  name = "iam_for_dynamo_lambda"
 
   assume_role_policy = <<EOF
 {
@@ -21,14 +21,14 @@ EOF
 resource "aws_lambda_function" "iota_lambda_dynamo" {
   filename         = "lambda_function_dynamo_payload.zip"
   function_name    = "iota_lambda_dynamo"
-  role             = aws_iam_role.iam_for_lambda.arn
+  role             = aws_iam_role.iam_for_dynamo_lambda.arn
   handler          = "iota-lambda-dynamo.lambda_handler"
-  source_code_hash = "${filebase64("lambda_function_dynamo_payload.zip")}"
+  source_code_hash = filebase64("lambda_function_dynamo_payload.zip")
   runtime          = "python3.6"
 
   environment {
     variables = {
-      foo = "bar"
+      dynamo_table_arn = var.dynamo_table_arn
     }
   }
 }
